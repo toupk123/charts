@@ -153,17 +153,4 @@ export default defineConfig({
   },
   esbuildMinifyIIFE: true,
   requestRecord: {},
-    base: '/charts/',
-  publicPath: '/charts/',
-  history: { type: 'hash' },
-  // 添加部署环境变量
-  define: {
-    'process.env.API_BASE': process.env.NODE_ENV === 'production' 
-      ? 'https://toupk123.github.io/charts/' 
-      : '/'
-  },
-    chainWebpack(memo) {
-    memo.plugins.delete('preload');
-    memo.plugins.delete('prefetch');
-  },
 });
